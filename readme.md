@@ -1,6 +1,6 @@
 # Docker Opencv
 
-(https://travis-ci.com/gigante/fedora-opencv) [![Docker Build Status](https://img.shields.io/docker/build/devlogos/fedora-opencv.svg)](https://hub.docker.com/r/devlogos/fedora-opencv) [![Docker Pulls](https://img.shields.io/docker/pulls/devlogos/fedora-opencv.svg)](https://hub.docker.com/r/devlogos/fedora-opencv)
+[![Docker Build Status](https://img.shields.io/docker/build/devlogos/fedora-opencv.svg)](https://hub.docker.com/r/devlogos/fedora-opencv) [![Docker Pulls](https://img.shields.io/docker/pulls/devlogos/fedora-opencv.svg)](https://hub.docker.com/r/devlogos/fedora-opencv)
 
 Docker images with Python 3 and OpenCV (+contrib) based on Fedora
 
