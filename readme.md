@@ -26,8 +26,7 @@ See [docker hub](https://hub.docker.com/r/devlogos/opencv/)
 ## Usage
 
 ```bash
-$ docker pull devlogos/opencv:3.4.1
-$ docker pull devlogos/opencv:3.3.1
+$ docker pull devlogos/opencv
 ```
 
 ## Credits
