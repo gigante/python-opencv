@@ -1,6 +1,6 @@
 # Docker Opencv
 
-[![Docker Build Status](https://img.shields.io/docker/build/devlogos/opencv.svg)](https://hub.docker.com/r/devlogos/opencv) [![Docker Pulls](https://img.shields.io/docker/pulls/devlogos/opencv.svg)](https://hub.docker.com/r/devlogos/opencv)
+[![Build Status](https://travis-ci.org/devlogos/fedora-opencv.svg?branch=master)](https://travis-ci.org/devlogos/fedora-opencv) [![Docker Build Status](https://img.shields.io/docker/build/devlogos/opencv.svg)](https://hub.docker.com/r/devlogos/opencv) [![Docker Pulls](https://img.shields.io/docker/pulls/devlogos/opencv.svg)](https://hub.docker.com/r/devlogos/opencv)
 
 Docker images with Python 3 and OpenCV (+contrib) based on Fedora
 
@@ -17,11 +17,11 @@ See [docker hub](https://hub.docker.com/r/devlogos/opencv/)
 
 ## Images
 
-| dist | lang | opencv | image | size |
-| :--- | :--- | :---: | :--- | :--- |
-| fedora | python 3 | --- | devlogos/opencv:base | ![MicroBadger Size](https://img.shields.io/microbadger/image-size/devlogos/opencv/base.svg)
-| fedora | python 3 | 3.3.1 | devlogos/opencv:3.3.1 | ![MicroBadger Size](https://img.shields.io/microbadger/image-size/devlogos/opencv/3.3.1.svg)
-| fedora | python 3 | 3.4.1 | devlogos/opencv:3.4.1 | ![MicroBadger Size](https://img.shields.io/microbadger/image-size/devlogos/opencv/3.4.0.svg)
+| dist | lang | opencv | image |
+| :--- | :--- | :---: | :--- |
+| fedora | python 3 | --- | devlogos/opencv:base
+| fedora | python 3 | 3.3.1 | devlogos/opencv:3.3.1
+| fedora | python 3 | 3.4.1 | devlogos/opencv:3.4.1
 
 ## Usage
 
