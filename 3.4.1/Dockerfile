@@ -1,4 +1,4 @@
-FROM devlogos/opencv:base
+FROM hdgigante/fedora-opencv-base
 
 ENV OPENCV_VERSION=3.4.1
 

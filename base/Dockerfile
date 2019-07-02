@@ -1,9 +1,10 @@
 FROM fedora:27
 
-RUN dnf install -y gcc gcc-c++ \
+RUN dnf install -y \
+    gcc \
+    gcc-c++ \
     cmake \
     wget \
-    git \
     unzip \
     # accelerated baseline JPEG compression and decompression library
     libjpeg-turbo-devel \
@@ -24,4 +25,6 @@ RUN dnf install -y gcc gcc-c++ \
     # python packages
     python3-devel python3-numpy \
     # kernel
-    kernel-headers
+    kernel-headers && \
+    # clean cache
+    dnf clean all
