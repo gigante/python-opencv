@@ -6,6 +6,7 @@ RUN dnf install -y \
     cmake \
     wget \
     unzip \
+    make \
     # accelerated baseline JPEG compression and decompression library
     libjpeg-turbo-devel \
     # Portable Network Graphics library
