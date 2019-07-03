@@ -24,7 +24,7 @@ See [docker hub](https://hub.docker.com/r/devlogos/opencv/)
 ## Usage
 
 ```bash
-$ docker pull hdgigante/fedora-opencv-3.4.1
+$ docker pull hdgigante/fedora-opencv:3.4.1
 ```
 
 ## Credits
