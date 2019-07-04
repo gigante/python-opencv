@@ -1,14 +1,10 @@
-# Docker Opencv
+# Docker OpenCV
 
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/hdgigante/opencv.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/hdgigante/opencv.svg)
 
-Docker images with Python 3 and OpenCV (+contrib) based on Fedora
-
-See [docker hub](https://hub.docker.com/r/devlogos/opencv/)
-
 ## Components
 
-- [OpenCV](https://github.com/opencv/opencv) e [Contrib](https://github.com/opencv/opencv_contrib) - 3.6.4 e 4.1.0
+- [OpenCV](https://github.com/opencv/opencv) and [Contrib](https://github.com/opencv/opencv_contrib) - 3.6.4 e 4.1.0
 - Tesseract
 - and opencv image dependencies
 
