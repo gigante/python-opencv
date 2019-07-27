@@ -4,7 +4,7 @@
 
 ## Components
 
-- [OpenCV](https://github.com/opencv/opencv) and [Contrib](https://github.com/opencv/opencv_contrib) - 3.6.4 e 4.1.0
+- [OpenCV](https://github.com/opencv/opencv) and [contrib](https://github.com/opencv/opencv_contrib)
 - Tesseract
 - and opencv image dependencies
 
@@ -14,8 +14,8 @@
 | :--- | :--- | :--- | :--- | :--- |
 | fedora 30 | python 3 | 3.4.7 | hdgigante/opencv:fedora-python3-opencv3 | ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/hdgigante/opencv/fedora-python3-opencv3.svg)
 | fedora 30 | python 3 | 4.1.1 | hdgigante/opencv:fedora-python3-opencv4 | ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/hdgigante/opencv/fedora-python3-opencv4.svg)
-| alpine | python 3 | 3.4.7 | hdgigante/opencv:alpine-python3-opencv3 | ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/hdgigante/opencv/alpine-python3-opencv3.svg)
-| alpine | python 3 | 4.1.1 | hdgigante/opencv:alpine-python3-opencv4 | ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/hdgigante/opencv/alpine-python3-opencv4.svg)
+| alpine 3.10 | python 3 | 3.4.7 | hdgigante/opencv:alpine-python3-opencv3 | ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/hdgigante/opencv/alpine-python3-opencv3.svg)
+| alpine 3.10 | python 3 | 4.1.1 | hdgigante/opencv:alpine-python3-opencv4 | ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/hdgigante/opencv/alpine-python3-opencv4.svg)
 
 
 ## Usage
