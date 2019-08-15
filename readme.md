@@ -14,7 +14,7 @@ Docker images with opencv and py3 based on fedora and alpine
 ## Images
 
 | dist | opencv | image | size
-| :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- |
 | fedora 30 | 3.4.7 | hdgigante/opencv:fedora-opencv3 | ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/hdgigante/opencv/fedora-opencv3.svg)
 | fedora 30 | 4.1.1 | hdgigante/opencv:fedora-opencv4 | ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/hdgigante/opencv/fedora-opencv4.svg)
 | alpine 3.10 | 3.4.7 | hdgigante/opencv:alpine-opencv3 | ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/hdgigante/opencv/alpine-opencv3.svg)
