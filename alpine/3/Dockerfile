@@ -1,6 +1,6 @@
 FROM python:3-alpine
 
-ENV OPENCV_VERSION=3.4.7
+ENV OPENCV_VERSION=3.4.8
 
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk add --update --no-cache \

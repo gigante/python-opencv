@@ -1,6 +1,6 @@
 FROM fedora:30
 
-ENV OPENCV_VERSION=4.1.1
+ENV OPENCV_VERSION=4.1.2
 
 RUN dnf install -y \
         gcc \
