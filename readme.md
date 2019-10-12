@@ -1,6 +1,6 @@
 # Docker OpenCV
 
-Docker images with opencv and py3 based on fedora
+Docker images with OpenCV and Python 3 based on Fedora
 
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/hdgigante/opencv.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/hdgigante/opencv.svg)
 
