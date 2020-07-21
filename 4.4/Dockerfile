@@ -1,25 +1,24 @@
-FROM fedora:30
+FROM fedora:32
 
-ENV OPENCV_VERSION=3.4.6
+ENV OPENCV_VERSION=4.4.0
 
-RUN dnf install -y \
+RUN dnf install -y -q \
         gcc \
         gcc-c++ \
         cmake \
         wget \
         unzip \
         make \
-        libjpeg-turbo-devel \
-        libpng-devel \
-        libtiff-devel \
-        libwebp-devel \
-        jasper-devel \
-        tbb-devel \
-        eigen3-devel \
-        tesseract tesseract-devel \
-        python3-devel python3-numpy \
+        libjpeg-turbo libjpeg-turbo-devel \
+        libpng libpng-devel \
+        libtiff libtiff-devel \
+        libwebp libwebp-devel \
+        jasper jasper-devel \
+        tbb tbb-devel \
+        eigen3 \
+        tesseract tesseract-langpack-por tesseract-devel \
+        python3-numpy python3-devel \
         kernel-headers && \
-    dnf clean all && \
     mkdir -p /opt && cd /opt && \
     wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip && \
     unzip opencv.zip && \
@@ -53,4 +52,19 @@ RUN dnf install -y \
     make install && \
     # clean
     rm -rf /opt/opencv-${OPENCV_VERSION} && \
-    rm -rf /opt/opencv_contrib-${OPENCV_VERSION}
+    rm -rf /opt/opencv_contrib-${OPENCV_VERSION} && \
+    dnf remove -y \
+        gcc \
+        gcc-c++ \
+        cmake \
+        make \
+        libjpeg-turbo-devel \
+        libpng-devel \
+        libtiff-devel \
+        libwebp-devel \
+        jasper-devel \
+        tbb-devel \
+        tesseract-devel \
+        python3-devel \
+        kernel-headers && \
+    dnf clean all
