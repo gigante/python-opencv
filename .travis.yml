@@ -2,18 +2,21 @@ language: shell
 dist: bionic
 services: docker
 
-script:
-  - make build CV=3.4
-  - make build CV=4.4
-
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker tag dkimg/opencv:4.4 dkimg/opencv:latest
-  - make deploy CV=3.4
-  - make deploy CV=4.4
-  - make deploy CV=latest
-
-after_script:
-  - docker images
-  - make test CV=3.4
-  - make test CV=4.4
+jobs:
+  include:
+    - stage: build opencv 3.4.x
+      script: make build CV=3.4
+    - stage: build opencv 4.4.x
+      script: make build
+    - stage: test
+      script:
+        - docker images
+        - make test CV=3.4
+        - make test CV=4.4
+    - stage: deploy
+      script:
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - docker tag dkimg/opencv:4.4 dkimg/opencv:latest
+        - make deploy CV=3.4
+        - make deploy CV=4.4
+        - make deploy CV=latest
