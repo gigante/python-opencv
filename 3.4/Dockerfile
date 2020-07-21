@@ -1,4 +1,4 @@
-FROM fedora:30
+FROM fedora:32
 
 ENV OPENCV_VERSION=3.4.11
 
