@@ -2,22 +2,22 @@ FROM fedora:32
 
 ENV OPENCV_VERSION=3.4.11
 
-RUN dnf install -y \
+RUN dnf install -y -q \
         gcc \
         gcc-c++ \
         cmake \
         wget \
         unzip \
         make \
-        libjpeg-turbo-devel \
-        libpng-devel \
-        libtiff-devel \
-        libwebp-devel \
-        jasper-devel \
-        tbb-devel \
-        eigen3-devel \
-        tesseract tesseract-devel \
-        python3-devel python3-numpy \
+        libjpeg-turbo libjpeg-turbo-devel \
+        libpng libpng-devel \
+        libtiff libtiff-devel \
+        libwebp libwebp-devel \
+        jasper jasper-devel \
+        tbb tbb-devel \
+        eigen3 \
+        tesseract tesseract-langpack-por tesseract-devel \
+        python3-numpy python3-devel \
         kernel-headers && \
     mkdir -p /opt && cd /opt && \
     wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip && \
