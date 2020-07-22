@@ -7,11 +7,9 @@ jobs:
     - stage: "build"
       name: "opencv 3.4.x"
       script:
-        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - make build CV=3.4
         - make push CV=3.4
     - script:
-      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - make build CV=4.4
       - docker tag dkimg/opencv:4.4 dkimg/opencv:latest
       - make push CV=4.4
