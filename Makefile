@@ -1,4 +1,4 @@
-.PHONY: build test deploy save
+.PHONY: build test push save
 
 CV=4.4
 
@@ -8,7 +8,7 @@ build:
 test:
 	docker run -it --rm -v $$(pwd):/mnt/$$(basename $$(pwd)) -w /mnt/$$(basename $$(pwd)) dkimg/opencv:$(CV) python3 test.py
 
-deploy:
+push:
 	@docker push dkimg/opencv:$(CV)
 
 save:
