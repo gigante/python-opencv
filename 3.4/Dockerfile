@@ -19,7 +19,6 @@ RUN dnf install -y \
         tesseract tesseract-devel \
         python3-devel python3-numpy \
         kernel-headers && \
-    dnf clean all && \
     mkdir -p /opt && cd /opt && \
     wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip && \
     unzip opencv.zip && \
@@ -53,4 +52,19 @@ RUN dnf install -y \
     make install && \
     # clean
     rm -rf /opt/opencv-${OPENCV_VERSION} && \
-    rm -rf /opt/opencv_contrib-${OPENCV_VERSION}
+    rm -rf /opt/opencv_contrib-${OPENCV_VERSION} && \
+    dnf remove -y \
+        gcc \
+        gcc-c++ \
+        cmake \
+        make \
+        libjpeg-turbo-devel \
+        libpng-devel \
+        libtiff-devel \
+        libwebp-devel \
+        jasper-devel \
+        tbb-devel \
+        tesseract-devel \
+        python3-devel \
+        kernel-headers && \
+    dnf clean all
