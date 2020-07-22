@@ -11,9 +11,7 @@ jobs:
         - make push CV=3.4 DIST=fedora
     - script:
       - make build CV=4.4 DIST=fedora
-      - docker tag dkimg/opencv:4.4 dkimg/opencv:latest
       - make push CV=4.4 DIST=fedora
-      - make push CV=latest DIST=fedora
       name: "opencv 4.4.x fedora"
     - script:
       - make build CV=3.4 DIST=alpine
