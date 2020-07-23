@@ -1,32 +1,29 @@
-language: shell
+os: linux
 dist: bionic
+language: shell
 services: docker
 
 jobs:
   include:
+    # stage to build and push images
     - stage: "build"
-      name: "opencv 3.4.x fedora"
       script:
-        - make build CV=3.4 DIST=fedora
-        - make push CV=3.4 DIST=fedora
-    - script:
-      - make build CV=4.4 DIST=fedora
-      - make push CV=4.4 DIST=fedora
-      name: "opencv 4.4.x fedora"
-    - script:
-      - make build CV=3.4 DIST=alpine
-      - make push CV=3.4 DIST=alpine
-      name: "opencv 3.4.x alpine"
-    - script:
-      - make build CV=4.4 DIST=alpine
-      - make push CV=4.4 DIST=alpine
-      name: "opencv 4.4.x alpine"
+        - make CV=4.4 DIST=fedora
+        - make latest CV=4.4 DIST=fedora
+      name: "build 4.4.x fedora"
+    - script: make CV=4.4 DIST=alpine
+      name: "build 4.4.x alpine"
+    - script: make CV=3.4 DIST=fedora
+      name: "build 3.4.x fedora"
+    - script: make CV=3.4 DIST=alpine
+      name: "build 3.4.x alpine"
+    # stage to pull and test images
     - stage: "test"
-      name: "opencv 3.4.x fedora"
-      script: make test CV=3.4 DIST=fedora
-    - script: make test CV=4.4 DIST=fedora
-      name: "opencv 4.4.x fedora"
+      script: make test CV=4.4 DIST=fedora
+      name: "test 4.4.x fedora"
+    - script: make test CV=3.4 DIST=fedora
+      name: "test 3.4.x fedora"
     - script: make test CV=3.4 DIST=alpine
-      name: "opencv 3.4.x alpine"
+      name: "test 3.4.x alpine"
     - script: make test CV=4.4 DIST=alpine
-      name: "opencv 4.4.x alpine"
+      name: "test 4.4.x alpine"
