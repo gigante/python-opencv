@@ -5,7 +5,7 @@ services: docker
 
 jobs:
   include:
-    # stage to build and push images
+    # build and push 4.4.x images
     - stage: "build"
       script:
         - make CV=4.4 DIST=fedora
@@ -13,17 +13,27 @@ jobs:
       name: "build 4.4.x fedora"
     - script: make CV=4.4 DIST=alpine
       name: "build 4.4.x alpine"
+    - script: make CV=4.4 DIST=ubuntu
+      name: "build 4.4.x ubuntu"
+    # build and push 3.4.x images
     - script: make CV=3.4 DIST=fedora
       name: "build 3.4.x fedora"
     - script: make CV=3.4 DIST=alpine
       name: "build 3.4.x alpine"
-    # stage to pull and test images
+    - script: make CV=3.4 DIST=ubuntu
+      name: "build 3.4.x ubuntu"
+    # pull and test 4.4.x images
     - stage: "test"
       script: make test CV=4.4 DIST=fedora
       name: "test 4.4.x fedora"
+    - script: make test CV=4.4 DIST=alpine
+      name: "test 4.4.x alpine"
+    - script: make test CV=4.4 DIST=ubuntu
+      name: "test 4.4.x ubuntu"
+    # pull and test 3.4.x images
     - script: make test CV=3.4 DIST=fedora
       name: "test 3.4.x fedora"
     - script: make test CV=3.4 DIST=alpine
       name: "test 3.4.x alpine"
-    - script: make test CV=4.4 DIST=alpine
-      name: "test 4.4.x alpine"
+    - script: make test CV=3.4 DIST=ubuntu
+      name: "test 3.4.x ubuntu"

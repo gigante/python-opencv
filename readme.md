@@ -13,8 +13,10 @@ Docker images with OpenCV and Python 3
 |:---------:|:------:|:-----:|:-----:|
 | `4.4.0` | Fedora 32 | dkimg/opencv:4.4-fedora | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4-fedora?label=image) |
 | `4.4.0` | Alpine 3.12 | dkimg/opencv:4.4-alpine | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4-alpine?label=image) |
+| `4.4.0` | Ubuntu 20.04 | dkimg/opencv:4.4-ubuntu | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4-ubuntu?label=image) |
 | `3.4.1` | Fedora 32 | dkimg/opencv:3.4-fedora | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4-fedora?label=image) |
 | `3.4.1` | Alpine 3.12 | dkimg/opencv:3.4-alpine | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4-alpine?label=image) |
+| `3.4.1` | Ubuntu 20.04 | dkimg/opencv:3.4-ubuntu | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4-ubuntu?label=image) |
 
 Usage:
 
