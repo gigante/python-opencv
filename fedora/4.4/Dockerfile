@@ -2,7 +2,8 @@ FROM fedora:32
 
 ENV OPENCV_VERSION=4.4.0
 
-RUN dnf install -y -q \
+RUN set -ex \
+    && dnf -q install -y \
         gcc \
         gcc-c++ \
         cmake \
@@ -18,17 +19,17 @@ RUN dnf install -y -q \
         eigen3 \
         tesseract tesseract-langpack-por tesseract-devel \
         python3-numpy python3-devel \
-        kernel-headers && \
-    mkdir -p /opt && cd /opt && \
-    wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip && \
-    unzip opencv.zip && \
-    rm -rf opencv.zip && \
-    wget https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip && \
-    unzip opencv_contrib.zip && \
-    rm -rf opencv_contrib.zip && \
-    mkdir -p /opt/opencv-${OPENCV_VERSION}/build && \
-    cd /opt/opencv-${OPENCV_VERSION}/build && \
-    cmake \
+        kernel-headers \
+    && mkdir -p /opt && cd /opt \
+    && wget -q https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
+    && unzip -qq opencv.zip \
+    && rm -rf opencv.zip \
+    && wget -q https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \
+    && unzip -qq opencv_contrib.zip \
+    && rm -rf opencv_contrib.zip \
+    && mkdir -p /opt/opencv-${OPENCV_VERSION}/build \
+    && cd /opt/opencv-${OPENCV_VERSION}/build \
+    && cmake \
         -D CMAKE_BUILD_TYPE=RELEASE \
         -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules \
@@ -47,13 +48,12 @@ RUN dnf install -y -q \
         -D INSTALL_PYTHON_EXAMPLES=OFF \
         -D BUILD_DOCS=OFF \
         -D BUILD_opencv_python2=OFF \
-        .. && \
-    make -j$(nproc) && \
-    make install && \
-    # clean
-    rm -rf /opt/opencv-${OPENCV_VERSION} && \
-    rm -rf /opt/opencv_contrib-${OPENCV_VERSION} && \
-    dnf remove -y \
+        .. \
+    && make -j$(nproc) \
+    && make install \
+    && rm -rf /opt/opencv-${OPENCV_VERSION} \
+    && rm -rf /opt/opencv_contrib-${OPENCV_VERSION} \
+    && dnf -q remove -y \
         gcc \
         gcc-c++ \
         cmake \
@@ -66,5 +66,5 @@ RUN dnf install -y -q \
         tbb-devel \
         tesseract-devel \
         python3-devel \
-        kernel-headers && \
-    dnf clean all
+        kernel-headers \
+    && dnf -q clean all

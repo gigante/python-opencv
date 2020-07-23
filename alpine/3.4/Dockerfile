@@ -2,12 +2,13 @@ FROM python:3.8-alpine
 
 ENV OPENCV_VERSION=3.4.11
 
-RUN echo "@edgunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-    echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
-    echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-    echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-    echo "@v3.10 http://dl-cdn.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositories && \
-    apk add --update --no-cache \
+RUN set -ex \
+    && echo "@edgunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
+    && echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+    && echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && echo "@v3.10 http://dl-cdn.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositories \
+    && apk add -q --update --no-cache \
         build-base \
         cmake \
         unzip \
@@ -22,18 +23,18 @@ RUN echo "@edgunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk
         eigen eigen-dev \
         tesseract-ocr tesseract-ocr-data-por tesseract-ocr-dev \
         python3-dev \
-        linux-headers && \
-    pip install numpy && \
-    mkdir -p /opt && cd /opt && \
-    wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip && \
-    unzip opencv.zip && \
-    rm -rf opencv.zip && \
-    wget https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip && \
-    unzip opencv_contrib.zip && \
-    rm -rf opencv_contrib.zip && \
-    mkdir -p /opt/opencv-${OPENCV_VERSION}/build && \
-    cd /opt/opencv-${OPENCV_VERSION}/build && \
-    cmake \
+        linux-headers \
+    && pip install -q numpy \
+    && mkdir -p /opt && cd /opt \
+    && wget -q https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
+    && unzip -qq opencv.zip \
+    && rm -rf opencv.zip \
+    && wget -q https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \
+    && unzip -qq opencv_contrib.zip \
+    && rm -rf opencv_contrib.zip \
+    && mkdir -p /opt/opencv-${OPENCV_VERSION}/build \
+    && cd /opt/opencv-${OPENCV_VERSION}/build \
+    && cmake \
         -D CMAKE_BUILD_TYPE=RELEASE \
         -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules \
@@ -53,13 +54,12 @@ RUN echo "@edgunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk
         -D BUILD_DOCS=OFF \
         -D BUILD_opencv_python2=OFF \
         -D PYTHON3_NUMPY_INCLUDE_DIRS=/usr/local/lib/python3.8/site-packages/numpy/core/include/ \
-        .. && \
-    make -j$(nproc) && \
-    make install && \
-    # clean
-    rm -rf /opt/opencv-${OPENCV_VERSION} && \
-    rm -rf /opt/opencv_contrib-${OPENCV_VERSION} && \
-    apk del --no-cache \
+        .. \
+    && make -j$(nproc) \
+    && make install \
+    && rm -rf /opt/opencv-${OPENCV_VERSION} \
+    && rm -rf /opt/opencv_contrib-${OPENCV_VERSION} \
+    && apk del -q --no-cache \
         build-base \
         cmake \
         openblas-dev \
