@@ -2,11 +2,13 @@
 
 [![Build Status](https://travis-ci.org/dkimg/opencv.svg?branch=master)](https://travis-ci.org/dkimg/opencv) ![Docker Pulls](https://img.shields.io/docker/pulls/dkimg/opencv.svg)
 
-Docker images with OpenCV and Python 3
+Docker images with OpenCV and Python bindings
 
 - [OpenCV](https://github.com/opencv/opencv) + [Contrib](https://github.com/opencv/opencv_contrib)
 - Python 3.8
 - Tesseract
+- Eigen
+- OpenBlas
 - and image dependencies
 
 | opencv | dist | image/tag | size |
