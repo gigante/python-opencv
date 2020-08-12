@@ -1,27 +1,29 @@
-FROM fedora:32
+FROM ubuntu:20.04
 
-ARG OPENCV_VERSION=4.4.0
+ARG OPENCV_VERSION
+ARG DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /opt/build
 
 RUN set -ex \
-    && dnf -q install -y \
-        gcc gcc-c++ \
-        make cmake \
+    && apt-get -qq update \
+    && apt-get -qq install -y --no-install-recommends software-properties-common \
+    && add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main" \
+    && apt-get -qq install -y --no-install-recommends \
+        build-essential cmake \
         wget unzip \
-        hdf5-devel \
-        libjpeg-turbo libjpeg-turbo-devel \
-        libpng libpng-devel \
-        libtiff libtiff-devel \
-        libwebp libwebp-devel \
-        jasper jasper-devel \
-        tbb tbb-devel \
-        eigen3 \
-        openblas openblas-devel \
-        protobuf protobuf-devel \
-        tesseract tesseract-langpack-por tesseract-devel \
-        python3-numpy python3-devel \
-        kernel-headers \
+        libhdf5-103 libhdf5-dev \
+        libopenblas0 libopenblas-dev \
+        libprotobuf17 libprotobuf-dev \
+        libjpeg8 libjpeg8-dev \
+        libpng16-16 libpng-dev \
+        libtiff5 libtiff-dev \
+        libwebp6 libwebp-dev \
+        libjasper1 libjasper-dev \
+        libtbb2 libtbb-dev \
+        libeigen3-dev \
+        tesseract-ocr tesseract-ocr-por libtesseract-dev \
+        python3-numpy python3-dev \
     && wget -q https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
     && wget -q https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \
     && unzip -qq opencv.zip -d /opt && rm -rf opencv.zip \
@@ -73,19 +75,19 @@ RUN set -ex \
     && rm -rf /opt/build/* \
     && rm -rf /opt/opencv-${OPENCV_VERSION} \
     && rm -rf /opt/opencv_contrib-${OPENCV_VERSION} \
-    && dnf -q remove -y \
-        gcc gcc-c++ \
-        make cmake \
-        hdf5-devel \
-        libjpeg-turbo-devel \
-        libpng-devel \
-        libtiff-devel \
-        libwebp-devel \
-        jasper-devel \
-        tbb-devel \
-        openblas-devel \
-        protobuf-devel \
-        tesseract-devel \
-        python3-devel \
-        kernel-headers \
-    && dnf -q clean all
+    && apt-get -qq remove -y \
+        software-properties-common \
+        build-essential cmake \
+        libhdf5-dev \
+        libopenblas-dev \
+        libprotobuf-dev \
+        libjpeg8-dev \
+        libpng-dev \
+        libtiff-dev \
+        libwebp-dev \
+        libjasper-dev \
+        libtbb-dev \
+        libtesseract-dev \
+        python3-dev \
+    && apt-get -qq autoremove \
+    && apt-get -qq clean

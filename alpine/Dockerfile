@@ -1,29 +1,32 @@
-FROM ubuntu:20.04
+FROM python:3.8-alpine
 
-ARG OPENCV_VERSION=3.4.11
-ARG DEBIAN_FRONTEND=noninteractive
+ARG OPENCV_VERSION
 
 WORKDIR /opt/build
 
 RUN set -ex \
-    && apt-get -qq update \
-    && apt-get -qq install -y --no-install-recommends software-properties-common \
-    && add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main" \
-    && apt-get -qq install -y --no-install-recommends \
-        build-essential cmake \
+    && echo "@edgunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
+    && echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+    && echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && echo "@v3.10 http://dl-cdn.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositories \
+    && apk add -q --update --no-cache \
+        build-base cmake \
         wget unzip \
-        libhdf5-dev \
-        libopenblas0 libopenblas-dev \
-        libprotobuf17 libprotobuf-dev \
-        libjpeg8 libjpeg8-dev \
-        libpng16-16 libpng-dev \
-        libtiff5 libtiff-dev \
-        libwebp6 libwebp-dev \
-        libjasper1 libjasper-dev \
-        libtbb2 libtbb-dev \
-        libeigen3-dev \
-        tesseract-ocr tesseract-ocr-por libtesseract-dev \
-        python3-numpy python3-dev \
+        hdf5 hdf5-dev \
+        protobuf protobuf-dev \
+        openblas openblas-dev@community \
+        libjpeg libjpeg-turbo-dev \
+        libpng libpng-dev \
+        tiff tiff-dev \
+        libwebp libwebp-dev \
+        jasper@v3.10 jasper-dev@v3.10 \
+        libtbb@testing libtbb-dev@testing \
+        eigen eigen-dev \
+        tesseract-ocr tesseract-ocr-data-por tesseract-ocr-dev \
+        python3-dev \
+        linux-headers \
+    && pip install -q numpy \
     && wget -q https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
     && wget -q https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \
     && unzip -qq opencv.zip -d /opt && rm -rf opencv.zip \
@@ -69,25 +72,26 @@ RUN set -ex \
         -D INSTALL_PYTHON_EXAMPLES=OFF \
         -D INSTALL_C_EXAMPLES=OFF \
         -D INSTALL_TESTS=OFF \
+        -D PYTHON3_NUMPY_INCLUDE_DIRS=/usr/local/lib/python3.8/site-packages/numpy/core/include/ \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
     && make install \
     && rm -rf /opt/build/* \
     && rm -rf /opt/opencv-${OPENCV_VERSION} \
     && rm -rf /opt/opencv_contrib-${OPENCV_VERSION} \
-    && apt-get -qq remove -y \
-        software-properties-common \
-        build-essential cmake \
-        libhdf5-dev \
-        libopenblas-dev \
-        libprotobuf-dev \
-        libjpeg8-dev \
+    && apk del -q --no-cache \
+        build-base cmake \
+        hdf5-dev \
+        protobuf-dev \
+        openblas-dev \
+        libjpeg-turbo-dev \
         libpng-dev \
-        libtiff-dev \
+        tiff-dev \
         libwebp-dev \
-        libjasper-dev \
+        jasper-dev \
         libtbb-dev \
-        libtesseract-dev \
+        eigen-dev \
+        tesseract-ocr-dev \
+        py3-numpy-dev \
         python3-dev \
-    && apt-get -qq autoremove \
-    && apt-get -qq clean
+        linux-headers

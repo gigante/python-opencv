@@ -1,12 +1,12 @@
 .PHONY: run build login push latest test save
 
-CV=4.4
-DIST=fedora
+CV ?= 4.4.0
+DIST ?= fedora
 
 run: build login push
 
 build:
-	@docker build -t dkimg/opencv:$(CV)-$(DIST) ./$(DIST)/$(CV)
+	docker build --build-arg OPENCV_VERSION=$(CV) -t dkimg/opencv:$(CV)-$(DIST) ./$(DIST)
 
 login:
 	@echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
@@ -18,6 +18,7 @@ push:
 	@docker push quay.io/dkimg/opencv:$(CV)-$(DIST)
 
 latest:
+	@docker pull dkimg/opencv:$(CV)-$(DIST)
 	@docker tag dkimg/opencv:$(CV)-$(DIST) dkimg/opencv:latest
 	@docker tag dkimg/opencv:$(CV)-$(DIST) quay.io/dkimg/opencv:latest
 	@docker push dkimg/opencv:latest

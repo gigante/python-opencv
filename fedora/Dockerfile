@@ -1,32 +1,27 @@
-FROM python:3.8-alpine
+FROM fedora:32
 
-ARG OPENCV_VERSION=3.4.11
+ARG OPENCV_VERSION
 
 WORKDIR /opt/build
 
 RUN set -ex \
-    && echo "@edgunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
-    && echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
-    && echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-    && echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
-    && echo "@v3.10 http://dl-cdn.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositories \
-    && apk add -q --update --no-cache \
-        build-base cmake \
+    && dnf -q install -y \
+        gcc gcc-c++ \
+        make cmake \
         wget unzip \
-        hdf5-dev \
-        protobuf protobuf-dev \
-        openblas openblas-dev@community \
-        libjpeg libjpeg-turbo-dev \
-        libpng libpng-dev \
-        tiff tiff-dev \
-        libwebp libwebp-dev \
-        jasper@v3.10 jasper-dev@v3.10 \
-        libtbb@testing libtbb-dev@testing \
-        eigen eigen-dev \
-        tesseract-ocr tesseract-ocr-data-por tesseract-ocr-dev \
-        python3-dev \
-        linux-headers \
-    && pip install -q numpy \
+        hdf5 hdf5-devel \
+        libjpeg-turbo libjpeg-turbo-devel \
+        libpng libpng-devel \
+        libtiff libtiff-devel \
+        libwebp libwebp-devel \
+        jasper jasper-devel \
+        tbb tbb-devel \
+        eigen3 \
+        openblas openblas-devel \
+        protobuf protobuf-devel \
+        tesseract tesseract-langpack-por tesseract-devel \
+        python3-numpy python3-devel \
+        kernel-headers \
     && wget -q https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
     && wget -q https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \
     && unzip -qq opencv.zip -d /opt && rm -rf opencv.zip \
@@ -72,26 +67,25 @@ RUN set -ex \
         -D INSTALL_PYTHON_EXAMPLES=OFF \
         -D INSTALL_C_EXAMPLES=OFF \
         -D INSTALL_TESTS=OFF \
-        -D PYTHON3_NUMPY_INCLUDE_DIRS=/usr/local/lib/python3.8/site-packages/numpy/core/include/ \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
     && make install \
     && rm -rf /opt/build/* \
     && rm -rf /opt/opencv-${OPENCV_VERSION} \
     && rm -rf /opt/opencv_contrib-${OPENCV_VERSION} \
-    && apk del -q --no-cache \
-        build-base cmake \
-        hdf5-dev \
-        protobuf-dev \
-        openblas-dev \
-        libjpeg-turbo-dev \
-        libpng-dev \
-        tiff-dev \
-        libwebp-dev \
-        jasper-dev \
-        libtbb-dev \
-        eigen-dev \
-        tesseract-ocr-dev \
-        py3-numpy-dev \
-        python3-dev \
-        linux-headers
+    && dnf -q remove -y \
+        gcc gcc-c++ \
+        make cmake \
+        hdf5-devel \
+        libjpeg-turbo-devel \
+        libpng-devel \
+        libtiff-devel \
+        libwebp-devel \
+        jasper-devel \
+        tbb-devel \
+        openblas-devel \
+        protobuf-devel \
+        tesseract-devel \
+        python3-devel \
+        kernel-headers \
+    && dnf -q clean all
