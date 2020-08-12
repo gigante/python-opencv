@@ -76,14 +76,12 @@ RUN set -ex \
     && dnf -q remove -y \
         gcc gcc-c++ \
         make cmake \
-        hdf5-devel \
         libjpeg-turbo-devel \
         libpng-devel \
         libtiff-devel \
         libwebp-devel \
         jasper-devel \
         tbb-devel \
-        openblas-devel \
         protobuf-devel \
         tesseract-devel \
         python3-devel \
