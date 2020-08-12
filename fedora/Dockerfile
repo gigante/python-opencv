@@ -9,7 +9,7 @@ RUN set -ex \
         gcc gcc-c++ \
         make cmake \
         wget unzip \
-        hdf5 hdf5-devel \
+        hdf5 \
         libjpeg-turbo libjpeg-turbo-devel \
         libpng libpng-devel \
         libtiff libtiff-devel \
@@ -17,7 +17,7 @@ RUN set -ex \
         jasper jasper-devel \
         tbb tbb-devel \
         eigen3 \
-        openblas openblas-devel \
+        openblas \
         protobuf protobuf-devel \
         tesseract tesseract-langpack-por tesseract-devel \
         python3-numpy python3-devel \
