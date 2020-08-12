@@ -3,7 +3,7 @@
 CV ?= 4.4.0
 DIST ?= fedora
 
-run: build login push
+run: build login push test
 
 build:
 	docker build --build-arg OPENCV_VERSION=$(CV) -t dkimg/opencv:$(CV)-$(DIST) ./$(DIST)
