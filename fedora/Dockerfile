@@ -17,7 +17,7 @@ RUN set -ex \
         jasper jasper-devel \
         tbb tbb-devel \
         eigen3 \
-        openblas \
+        openblas openblas-devel \
         protobuf protobuf-devel \
         tesseract tesseract-langpack-por tesseract-devel \
         python3-numpy python3-devel \
