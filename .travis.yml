@@ -7,32 +7,32 @@ jobs:
   include:
     - stage: "Alpine"
       script:
-        - make CV=4.4.0 DIST=alpine
-        - make latest CV=4.4.0 DIST=alpine
+        - make CV=4.5.0 DIST=alpine
+        - make latest CV=4.5.0 DIST=alpine
+      name: "OpenCV 4.5.0"
+    - script: make CV=4.4.0 DIST=alpine
       name: "OpenCV 4.4.0"
     - script: make CV=4.3.0 DIST=alpine
       name: "OpenCV 4.3.0"
-    - script: make CV=3.4.11 DIST=alpine
-      name: "OpenCV 3.4.11"
-    - script: make CV=3.4.10 DIST=alpine
-      name: "OpenCV 3.4.10"
+    - script: make CV=3.4.12 DIST=alpine
+      name: "OpenCV 3.4.12"
     #
     - stage: "Fedora"
-      script: make CV=4.4.0 DIST=fedora
+      script: make CV=4.5.0 DIST=fedora
+      name: "OpenCV 4.5.0"
+    - script: make CV=4.4.0 DIST=fedora
       name: "OpenCV 4.4.0"
     - script: make CV=4.3.0 DIST=fedora
       name: "OpenCV 4.3.0"
-    - script: make CV=3.4.11 DIST=fedora
-      name: "OpenCV 3.4.11"
-    - script: make CV=3.4.10 DIST=fedora
-      name: "OpenCV 3.4.10"
+    - script: make CV=3.4.12 DIST=fedora
+      name: "OpenCV 3.4.12"
     #
     - stage: "Ubuntu"
-      script: make CV=4.4.0 DIST=ubuntu
+      script: make CV=4.5.0 DIST=ubuntu
+      name: "OpenCV 4.5.0"
+    - script: make CV=4.4.0 DIST=ubuntu
       name: "OpenCV 4.4.0"
     - script: make CV=4.3.0 DIST=ubuntu
       name: "OpenCV 4.3.0"
-    - script: make CV=3.4.11 DIST=ubuntu
-      name: "OpenCV 3.4.11"
-    - script: make CV=3.4.10 DIST=ubuntu
-      name: "OpenCV 3.4.10"
+    - script: make CV=3.4.12 DIST=ubuntu
+      name: "OpenCV 3.4.12"
