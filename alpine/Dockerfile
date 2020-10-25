@@ -5,11 +5,10 @@ ARG OPENCV_VERSION
 WORKDIR /opt/build
 
 RUN set -ex \
-    && echo "@edgunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
-    && echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
-    && echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+    && echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
     && echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
-    && echo "@v3.10 http://dl-cdn.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositories \
+    && echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+    && echo "@legacy http://dl-cdn.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositories \
     && apk add -q --update --no-cache \
         build-base cmake \
         wget unzip \
@@ -20,7 +19,7 @@ RUN set -ex \
         libpng libpng-dev \
         tiff tiff-dev \
         libwebp libwebp-dev \
-        jasper@v3.10 jasper-dev@v3.10 \
+        jasper@legacy jasper-dev@legacy \
         libtbb@testing libtbb-dev@testing \
         eigen eigen-dev \
         tesseract-ocr tesseract-ocr-data-por tesseract-ocr-dev \
@@ -72,6 +71,11 @@ RUN set -ex \
         -D INSTALL_PYTHON_EXAMPLES=OFF \
         -D INSTALL_C_EXAMPLES=OFF \
         -D INSTALL_TESTS=OFF \
+        -D PYTHON3_EXECUTABLE=/usr/local/bin/python \
+        -D PYTHON3_INCLUDE_DIR=/usr/local/include/python3.8/ \
+        -D PYTHON3_LIBRARY=/usr/local/lib/libpython3.so \
+        -D PYTHON_LIBRARY=/usr/local/lib/libpython3.so \
+        -D PYTHON3_PACKAGES_PATH=/usr/local/lib/python3.8/site-packages/ \
         -D PYTHON3_NUMPY_INCLUDE_DIRS=/usr/local/lib/python3.8/site-packages/numpy/core/include/ \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
