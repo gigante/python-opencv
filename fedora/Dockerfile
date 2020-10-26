@@ -28,7 +28,7 @@ RUN set -ex \
     && unzip -qq opencv_contrib.zip -d /opt && rm -rf opencv_contrib.zip \
     && cmake \
         -D CMAKE_BUILD_TYPE=RELEASE \
-        -D CMAKE_INSTALL_PREFIX=/usr/local \
+        -D CMAKE_INSTALL_PREFIX=/usr \
         -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib-${OPENCV_VERSION}/modules \
         -D EIGEN_INCLUDE_PATH=/usr/include/eigen3 \
         -D OPENCV_ENABLE_NONFREE=ON \
@@ -36,7 +36,7 @@ RUN set -ex \
         -D WITH_PNG=ON \
         -D WITH_TIFF=ON \
         -D WITH_WEBP=ON \
-        -D WITH_JASPER=ON \
+        -D WITH_JASPER=OFF \
         -D WITH_EIGEN=ON \
         -D WITH_TBB=ON \
         -D WITH_LAPACK=ON \
@@ -67,6 +67,12 @@ RUN set -ex \
         -D INSTALL_PYTHON_EXAMPLES=OFF \
         -D INSTALL_C_EXAMPLES=OFF \
         -D INSTALL_TESTS=OFF \
+        -D PYTHON3_EXECUTABLE=/bin/python \
+        -D PYTHON3_INCLUDE_DIR=/usr/include/python3.8/ \
+        -D PYTHON3_LIBRARY=/usr/lib64/libpython3.so \
+        -D PYTHON_LIBRARY=/usr/lib64/libpython3.so \
+        -D PYTHON3_PACKAGES_PATH=/usr/lib64/python3.8/site-packages/ \
+        -D PYTHON3_NUMPY_INCLUDE_DIRS=/usr/lib64/python3.8/site-packages/numpy/core/include/ \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
     && make install \
