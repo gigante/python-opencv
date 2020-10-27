@@ -4,7 +4,7 @@ CV ?= 4.5.0
 DIST ?= fedora
 WORKDIR=/mnt/$$(basename $$(pwd))
 
-run: build login push test
+run: build test login push
 
 build:
 	docker build --build-arg OPENCV_VERSION=$(CV) -t dkimg/opencv:$(CV)-$(DIST) ./$(DIST)
@@ -26,10 +26,7 @@ latest:
 	@docker push quay.io/dkimg/opencv:latest
 
 test:
-	@docker pull dkimg/opencv:$(CV)-$(DIST)
-	@docker pull quay.io/dkimg/opencv:$(CV)-$(DIST)
 	@docker run -it --rm -v $$(pwd):$(WORKDIR) -w $(WORKDIR) dkimg/opencv:$(CV)-$(DIST) python3 test.py
-	@docker run -it --rm -v $$(pwd):$(WORKDIR) -w $(WORKDIR) quay.io/dkimg/opencv:$(CV)-$(DIST) python3 test.py
 
 save:
 	@docker save dkimg/opencv:$(CV)-$(DIST) | gzip > dkimg_opencv$(CV)-$(DIST).tar.gz
