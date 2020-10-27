@@ -67,12 +67,6 @@ RUN set -ex \
         -D INSTALL_PYTHON_EXAMPLES=OFF \
         -D INSTALL_C_EXAMPLES=OFF \
         -D INSTALL_TESTS=OFF \
-        -D PYTHON3_EXECUTABLE=/bin/python \
-        -D PYTHON3_INCLUDE_DIR=/usr/include/python3.8/ \
-        -D PYTHON3_LIBRARY=/usr/lib64/libpython3.so \
-        -D PYTHON_LIBRARY=/usr/lib64/libpython3.so \
-        -D PYTHON3_PACKAGES_PATH=/usr/lib64/python3.8/site-packages/ \
-        -D PYTHON3_NUMPY_INCLUDE_DIRS=/usr/lib64/python3.8/site-packages/numpy/core/include/ \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
     && make install \

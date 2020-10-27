@@ -21,7 +21,7 @@ RUN set -ex \
         libtbb2 libtbb-dev \
         libeigen3-dev \
         tesseract-ocr tesseract-ocr-por libtesseract-dev \
-        python3-numpy python3-dev \
+        python3 python3-pip python3-numpy python3-dev \
     && wget -q --no-check-certificate https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
     && wget -q --no-check-certificate https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \
     && unzip -qq opencv.zip -d /opt && rm -rf opencv.zip \
