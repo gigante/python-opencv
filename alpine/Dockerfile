@@ -8,7 +8,6 @@ RUN set -ex \
     && echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
     && echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
     && echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-    && echo "@legacy http://dl-cdn.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositories \
     && apk add -q --update --no-cache \
         build-base cmake \
         wget unzip \
@@ -19,7 +18,7 @@ RUN set -ex \
         libpng libpng-dev \
         tiff tiff-dev \
         libwebp libwebp-dev \
-        jasper@legacy jasper-dev@legacy \
+        openjpeg openjpeg-dev openjpeg-tools \
         libtbb@testing libtbb-dev@testing \
         eigen eigen-dev \
         tesseract-ocr tesseract-ocr-data-por tesseract-ocr-dev \
@@ -92,7 +91,7 @@ RUN set -ex \
         libpng-dev \
         tiff-dev \
         libwebp-dev \
-        jasper-dev \
+        openjpeg-dev \
         libtbb-dev \
         eigen-dev \
         tesseract-ocr-dev \

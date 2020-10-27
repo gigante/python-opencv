@@ -7,8 +7,6 @@ WORKDIR /opt/build
 
 RUN set -ex \
     && apt-get -qq update \
-    && apt-get -qq install -y --no-install-recommends software-properties-common \
-    && add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main" \
     && apt-get -qq install -y --no-install-recommends \
         build-essential cmake \
         wget unzip \
@@ -19,13 +17,13 @@ RUN set -ex \
         libpng16-16 libpng-dev \
         libtiff5 libtiff-dev \
         libwebp6 libwebp-dev \
-        libjasper1 libjasper-dev \
+        libopenjp2-7 libopenjp2-7-dev \
         libtbb2 libtbb-dev \
         libeigen3-dev \
         tesseract-ocr tesseract-ocr-por libtesseract-dev \
         python3-numpy python3-dev \
-    && wget -q https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
-    && wget -q https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \
+    && wget -q --no-check-certificate https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
+    && wget -q --no-check-certificate https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \
     && unzip -qq opencv.zip -d /opt && rm -rf opencv.zip \
     && unzip -qq opencv_contrib.zip -d /opt && rm -rf opencv_contrib.zip \
     && cmake \
@@ -85,7 +83,7 @@ RUN set -ex \
         libpng-dev \
         libtiff-dev \
         libwebp-dev \
-        libjasper-dev \
+        libopenjp2-7-dev \
         libtbb-dev \
         libtesseract-dev \
         python3-dev \

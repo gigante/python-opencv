@@ -14,7 +14,7 @@ RUN set -ex \
         libpng libpng-devel \
         libtiff libtiff-devel \
         libwebp libwebp-devel \
-        jasper jasper-devel \
+        openjpeg2 openjpeg2-devel \
         tbb tbb-devel \
         eigen3 \
         openblas openblas-devel \
@@ -36,7 +36,7 @@ RUN set -ex \
         -D WITH_PNG=ON \
         -D WITH_TIFF=ON \
         -D WITH_WEBP=ON \
-        -D WITH_JASPER=OFF \
+        -D WITH_JASPER=ON \
         -D WITH_EIGEN=ON \
         -D WITH_TBB=ON \
         -D WITH_LAPACK=ON \
@@ -86,7 +86,7 @@ RUN set -ex \
         libpng-devel \
         libtiff-devel \
         libwebp-devel \
-        jasper-devel \
+        openjpeg2-devel \
         tbb-devel \
         protobuf-devel \
         tesseract-devel \
