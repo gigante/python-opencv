@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:20.10
 
 ARG OPENCV_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
@@ -10,9 +10,9 @@ RUN set -ex \
     && apt-get -qq install -y --no-install-recommends \
         build-essential cmake \
         wget unzip \
-        libhdf5-103 libhdf5-dev \
+        libhdf5-103-1 libhdf5-dev \
         libopenblas0 libopenblas-dev \
-        libprotobuf17 libprotobuf-dev \
+        libprotobuf23 libprotobuf-dev \
         libjpeg8 libjpeg8-dev \
         libpng16-16 libpng-dev \
         libtiff5 libtiff-dev \

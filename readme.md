@@ -6,7 +6,7 @@
 Docker images with OpenCV and Python bindings
 
 - [OpenCV](https://github.com/opencv/opencv) + [contrib](https://github.com/opencv/opencv_contrib)
-- Python 3.8
+- Python 3.9
 - Numpy
 - Tesseract
 - Eigen
@@ -23,19 +23,19 @@ $ docker run -it dkimg/opencv python3
 
 | opencv | base image | tag | size |
 |:---------:|:------:|:-----:|:-----:|
-| **4.5.0** | python:3.8-alpine | `dkimg/opencv` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | python:3.8-alpine | `dkimg/opencv:4.5.0-alpine` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | fedora:32 | `dkimg/opencv:4.5.0-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | ubuntu:20.04 | `dkimg/opencv:4.5.0-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| **4.4.0** | python:3.8-alpine | `dkimg/opencv:4.4.0-alpine` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | fedora:32 | `dkimg/opencv:4.4.0-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | ubuntu:20.04 | `dkimg/opencv:4.4.0-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| **4.3.0** | python:3.8-alpine | `dkimg/opencv:4.3.0-alpine` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.3.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | fedora:32 | `dkimg/opencv:4.3.0-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.3.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | ubuntu:20.04 | `dkimg/opencv:4.3.0-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.3.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| **3.4.12** | python:3.8-alpine | `dkimg/opencv:3.4.12-alpine` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.12-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | fedora:32 | `dkimg/opencv:3.4.12-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.12-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | ubuntu:20.04 | `dkimg/opencv:3.4.12-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.12-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| **4.5.0** | python:3.9-alpine | `dkimg/opencv` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | python:3.9-alpine | `dkimg/opencv:4.5.0-alpine` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | fedora:33 | `dkimg/opencv:4.5.0-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | ubuntu:20.10 | `dkimg/opencv:4.5.0-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| **4.4.0** | python:3.9-alpine | `dkimg/opencv:4.4.0-alpine` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | fedora:33 | `dkimg/opencv:4.4.0-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | ubuntu:20.10 | `dkimg/opencv:4.4.0-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| **4.3.0** | python:3.9-alpine | `dkimg/opencv:4.3.0-alpine` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.3.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | fedora:33 | `dkimg/opencv:4.3.0-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.3.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | ubuntu:20.10 | `dkimg/opencv:4.3.0-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.3.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| **3.4.12** | python:3.9-alpine | `dkimg/opencv:3.4.12-alpine` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.12-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | fedora:33 | `dkimg/opencv:3.4.12-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.12-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | ubuntu:20.10 | `dkimg/opencv:3.4.12-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.12-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
 
 ## Build
 
