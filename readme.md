@@ -14,6 +14,11 @@ Docker images with OpenCV and Python bindings
 - Intel TBB
 - and image dependencies (libjpeg, libpng, libtiff, libwebp, openjpeg)
 
+Available on
+
+- [https://hub.docker.com/r/dkimg/opencv](https://hub.docker.com/r/dkimg/opencv)
+- [http://quay.io/dkimg/opencv](http://quay.io/dkimg/opencv)
+
 ## Usage:
 
 ```
