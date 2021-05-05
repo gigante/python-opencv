@@ -9,7 +9,7 @@ jobs:
       script:
         - make CV=4.5.2 DIST=fedora
         - make latest CV=4.5.2 DIST=fedora
-      name: "OpenCV 4.5.1"
+      name: "OpenCV 4.5.2"
     - script: make CV=4.4.0 DIST=fedora
       name: "OpenCV 4.4.0"
     - script: make CV=4.3.0 DIST=fedora

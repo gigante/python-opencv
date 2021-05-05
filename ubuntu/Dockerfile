@@ -77,7 +77,6 @@ RUN set -ex \
         software-properties-common \
         build-essential cmake \
         libhdf5-dev \
-        libopenblas-dev \
         libprotobuf-dev \
         libjpeg8-dev \
         libpng-dev \
