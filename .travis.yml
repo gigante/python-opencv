@@ -5,34 +5,24 @@ services: docker
 
 jobs:
   include:
-    - stage: "Alpine"
-      script:
-        - make CV=4.5.1 DIST=alpine
-        - make latest CV=4.5.1 DIST=alpine
-      name: "OpenCV 4.5.1"
-    - script: make CV=4.4.0 DIST=alpine
-      name: "OpenCV 4.4.0"
-    - script: make CV=4.3.0 DIST=alpine
-      name: "OpenCV 4.3.0"
-    - script: make CV=3.4.13 DIST=alpine
-      name: "OpenCV 3.4.13"
-    #
     - stage: "Fedora"
-      script: make CV=4.5.1 DIST=fedora
+      script:
+        - make CV=4.5.2 DIST=fedora
+        - make latest CV=4.5.2 DIST=fedora
       name: "OpenCV 4.5.1"
     - script: make CV=4.4.0 DIST=fedora
       name: "OpenCV 4.4.0"
     - script: make CV=4.3.0 DIST=fedora
       name: "OpenCV 4.3.0"
-    - script: make CV=3.4.13 DIST=fedora
-      name: "OpenCV 3.4.13"
+    - script: make CV=3.4.14 DIST=fedora
+      name: "OpenCV 3.4.14"
     #
     - stage: "Ubuntu"
-      script: make CV=4.5.1 DIST=ubuntu
-      name: "OpenCV 4.5.1"
+      script: make CV=4.5.2 DIST=ubuntu
+      name: "OpenCV 4.5.2"
     - script: make CV=4.4.0 DIST=ubuntu
       name: "OpenCV 4.4.0"
     - script: make CV=4.3.0 DIST=ubuntu
       name: "OpenCV 4.3.0"
-    - script: make CV=3.4.13 DIST=ubuntu
-      name: "OpenCV 3.4.13"
+    - script: make CV=3.4.14 DIST=ubuntu
+      name: "OpenCV 3.4.14"
