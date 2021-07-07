@@ -29,13 +29,13 @@ $ docker run -it dkimg/opencv python3
 | opencv | base image | tag | size |
 |:---------:|:------:|:-----:|:-----:|
 | **4.5.3** | fedora:34 | `dkimg/opencv` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.3-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | ubuntu:21.04 | `dkimg/opencv:4.5.2-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.3-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | ubuntu:21.04 | `dkimg/opencv:4.5.3-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.3-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | **4.4.0** | fedora:34 | `dkimg/opencv:4.4.0-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | ubuntu:21.04 | `dkimg/opencv:4.4.0-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.4.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | **4.3.0** | fedora:34 | `dkimg/opencv:4.3.0-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.3.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | ubuntu:21.04 | `dkimg/opencv:4.3.0-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.3.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| **3.4.15** | fedora:34 | `dkimg/opencv:3.4.14-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.15-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | ubuntu:21.04 | `dkimg/opencv:3.4.14-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.15-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| **3.4.15** | fedora:34 | `dkimg/opencv:3.4.15-fedora` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.15-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | ubuntu:21.04 | `dkimg/opencv:3.4.15-ubuntu` | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/3.4.15-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
 
 ## Build
 
