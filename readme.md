@@ -83,7 +83,7 @@ Config build options
 To build locally
 
 ```
-$ make build
+$ make build CV=4.5.4 DIST=fedora
 ```
 
 ## Based on...
