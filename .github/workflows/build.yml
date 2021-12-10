@@ -7,6 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [4.5.4, 4.4.0, 4.3.0, 3.4.16]
+        dist: ["debian", "fedora", "ubuntu"]
     steps:
       -
         uses: actions/checkout@v2
@@ -33,13 +37,10 @@ jobs:
           password: ${{ secrets.QUAY_TOKEN }}
       -
         name: Build
-        run: make build CV=4.5.4 DIST=fedora
+        run: make build CV=${{ matrix.version }} DIST=${{ matrix.dist }}
       -
         name: Test
-        run: make test CV=4.5.4 DIST=fedora
+        run: make test CV=${{ matrix.version }} DIST=${{ matrix.dist }}
       -
         name: Push
-        run: make push CV=4.5.4 DIST=fedora
-      -
-        name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+        run: make push CV=${{ matrix.version }} DIST=${{ matrix.dist }}
