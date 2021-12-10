@@ -14,8 +14,10 @@ login:
 	@echo "$(QUAY_PASSWORD)" | docker login quay.io -u "$(QUAY_USERNAME)" --password-stdin
 
 push:
+	@docker tag dkimg/opencv:$(CV)-$(DIST) ghcr.io/dkimg/opencv:$(CV)-$(DIST)
 	@docker tag dkimg/opencv:$(CV)-$(DIST) quay.io/dkimg/opencv:$(CV)-$(DIST)
 	@docker push dkimg/opencv:$(CV)-$(DIST)
+	@docker push ghcr.io/dkimg/opencv:$(CV)-$(DIST)
 	@docker push quay.io/dkimg/opencv:$(CV)-$(DIST)
 
 latest:
