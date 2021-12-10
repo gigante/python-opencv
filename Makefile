@@ -28,7 +28,7 @@ latest:
 	@docker push quay.io/dkimg/opencv:latest
 
 test:
-	@docker run -it --rm -v $$(pwd):$(WORKDIR) -w $(WORKDIR) dkimg/opencv:$(CV)-$(DIST) python3 test.py
+	@docker run --rm -v $$(pwd):$(WORKDIR) -w $(WORKDIR) dkimg/opencv:$(CV)-$(DIST) python3 test.py
 
 save:
 	@docker save dkimg/opencv:$(CV)-$(DIST) | gzip > dkimg_opencv$(CV)-$(DIST).tar.gz
