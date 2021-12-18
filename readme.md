@@ -1,6 +1,7 @@
 # Docker OpenCV
 
-![Travis (.org)](https://img.shields.io/travis/dkimg/opencv?style=flat-square)
+![build](https://github.com/dkimg/opencv/actions/workflows/build/badge.svg)
+![GitHub Pulls](https://img.shields.io/github/downloads/dkimg/opencv/total)
 ![Docker Pulls](https://img.shields.io/docker/pulls/dkimg/opencv?style=flat-square)
 
 Docker images with OpenCV and Python bindings
@@ -16,8 +17,9 @@ Docker images with OpenCV and Python bindings
 
 Available on
 
-- [https://hub.docker.com/r/dkimg/opencv](https://hub.docker.com/r/dkimg/opencv)
-- [http://quay.io/dkimg/opencv](http://quay.io/dkimg/opencv)
+- [DockerHub](https://hub.docker.com/r/dkimg/opencv)
+- [Quay.io](https://quay.io/dkimg/opencv)
+- [Github](https://github.com/dkimg/opencv/pkgs/container/opencv)
 
 ## Usage:
 

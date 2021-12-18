@@ -44,3 +44,12 @@ jobs:
       -
         name: Push
         run: make push CV=${{ matrix.version }} DIST=${{ matrix.dist }}
+  latest:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v2
+        name: Checkout code
+      -
+        name: Latest
+        run: make latest CV=4.5.4 DIST=fedora

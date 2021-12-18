@@ -9,10 +9,6 @@ run: build test login push
 build:
 	docker build --build-arg OPENCV_VERSION=$(CV) -t dkimg/opencv:$(CV)-$(DIST) ./$(DIST)
 
-login:
-	@echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
-	@echo "$(QUAY_PASSWORD)" | docker login quay.io -u "$(QUAY_USERNAME)" --password-stdin
-
 push:
 	@docker tag dkimg/opencv:$(CV)-$(DIST) ghcr.io/dkimg/opencv:$(CV)-$(DIST)
 	@docker tag dkimg/opencv:$(CV)-$(DIST) quay.io/dkimg/opencv:$(CV)-$(DIST)
@@ -23,8 +19,10 @@ push:
 latest:
 	@docker pull dkimg/opencv:$(CV)-$(DIST)
 	@docker tag dkimg/opencv:$(CV)-$(DIST) dkimg/opencv:latest
+	@docker tag dkimg/opencv:$(CV)-$(DIST) ghcr.io/dkimg/opencv:latest
 	@docker tag dkimg/opencv:$(CV)-$(DIST) quay.io/dkimg/opencv:latest
 	@docker push dkimg/opencv:latest
+	@docker push ghcr.io/dkimg/opencv:latest
 	@docker push quay.io/dkimg/opencv:latest
 
 test:
