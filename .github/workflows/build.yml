@@ -45,6 +45,7 @@ jobs:
         name: Push
         run: make push CV=${{ matrix.version }} DIST=${{ matrix.dist }}
   latest:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       -
