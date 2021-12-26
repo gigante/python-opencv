@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [4.5.4, 4.4.0, 4.3.0, 3.4.16]
+        version: [4.5.5, 4.4.0, 4.3.0, 3.4.16]
         dist: ["debian", "fedora", "ubuntu"]
     steps:
       -
@@ -44,6 +44,32 @@ jobs:
       -
         name: Push
         run: make push CV=${{ matrix.version }} DIST=${{ matrix.dist }}
+  latest:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v2
+        name: Checkout code
+      -
+        name: Login to Github Packages
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Login to Quay.io
+        uses: docker/login-action@v1
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_TOKEN }}
       -
         name: Latest
-        run: make latest CV=4.5.4 DIST=fedora
+        run: make latest CV=4.5.5 DIST=fedora

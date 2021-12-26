@@ -1,6 +1,6 @@
 .PHONY: run build login push latest test save
 
-CV ?= 4.5.4
+CV ?= 4.5.5
 DIST ?= fedora
 WORKDIR=/mnt/$$(basename $$(pwd))
 
