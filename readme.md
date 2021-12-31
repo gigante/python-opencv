@@ -1,7 +1,6 @@
 # Docker OpenCV
 
-![build](https://github.com/dkimg/opencv/actions/workflows/build/badge.svg)
-![GitHub Pulls](https://img.shields.io/github/downloads/dkimg/opencv/total)
+![build](https://github.com/dkimg/opencv/actions/workflows/build.yml/badge.svg)
 ![Docker Pulls](https://img.shields.io/docker/pulls/dkimg/opencv?style=flat-square)
 
 Docker images with OpenCV and Python bindings
@@ -89,7 +88,7 @@ Config build options
 To build locally
 
 ```
-$ make build CV=4.5.4 DIST=fedora
+$ make build CV=4.5.5 DIST=fedora
 ```
 
 ## Based on...
