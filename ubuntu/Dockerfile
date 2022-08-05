@@ -18,7 +18,7 @@ RUN set -ex \
         libtiff5 libtiff-dev \
         libwebp7 libwebp-dev \
         libopenjp2-7 libopenjp2-7-dev \
-        libtbb2 libtbb-dev \
+        libtbb2 libtbb2-dev \
         libeigen3-dev \
         tesseract-ocr tesseract-ocr-por libtesseract-dev \
         python3 python3-pip python3-numpy python3-dev \
