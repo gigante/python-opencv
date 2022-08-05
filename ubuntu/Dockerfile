@@ -16,7 +16,7 @@ RUN set -ex \
         libjpeg8 libjpeg8-dev \
         libpng16-16 libpng-dev \
         libtiff5 libtiff-dev \
-        libwebp6 libwebp-dev \
+        libwebp7 libwebp-dev \
         libopenjp2-7 libopenjp2-7-dev \
         libtbb2 libtbb-dev \
         libeigen3-dev \
@@ -70,7 +70,7 @@ RUN set -ex \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
     && make install \
-    && ln -s /usr/local/lib/python3.9/site-packages/cv2/python-3.9/cv2.cpython-39-x86_64-linux-gnu.so /usr/local/lib/python3.9/site-packages/cv2/python-3.9/cv2.so \
+    && ln -s /usr/local/lib/python3.10/dist-packages/cv2/python-3.10/cv2.cpython-310-x86_64-linux-gnu.so /usr/local/lib/python3.10/dist-packages/cv2/python-3.10/cv2.so \
     && rm -rf /opt/build/* \
     && rm -rf /opt/opencv-${OPENCV_VERSION} \
     && rm -rf /opt/opencv_contrib-${OPENCV_VERSION} \
