@@ -69,6 +69,7 @@ RUN set -ex \
         -D INSTALL_TESTS=OFF \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
+    && ln -s /usr/local/lib/python3.9/site-packages/cv2 /usr/local/lib/python3.9/dist-packages/cv2 \
     && make install \
     && rm -rf /opt/build/* \
     && rm -rf /opt/opencv-${OPENCV_VERSION} \
