@@ -1,4 +1,4 @@
-# Docker OpenCV
+# Python OpenCV
 
 ![build](https://github.com/dkimg/opencv/actions/workflows/build.yml/badge.svg)
 ![Docker Pulls](https://img.shields.io/docker/pulls/dkimg/opencv?style=flat-square)
