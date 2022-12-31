@@ -32,12 +32,10 @@ $ docker run -it dkimg/opencv python3
 | | python:3.10-alpine | `dkimg/opencv:4.7.0-alpine` | 3.10 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.7.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | ubuntu:22.04 | `dkimg/opencv:4.7.0-ubuntu` | 3.10 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.7.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | debian:11-slim | `dkimg/opencv:4.7.0-debian` | 3.9 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.7.0-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
-
 | **4.6.0** | fedora:37 | `dkimg/opencv:4.6.0-fedora` | 3.11 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.6.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | python:3.10-alpine | `dkimg/opencv:4.6.0-alpine` | 3.10 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.6.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | ubuntu:22.04 | `dkimg/opencv:4.6.0-ubuntu` | 3.10 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.6.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | debian:11-slim | `dkimg/opencv:4.6.0-debian` | 3.9 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.6.0-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
-
 | **4.5.5** | fedora:37 | `dkimg/opencv:4.5.5-fedora` | 3.11 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.5-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | python:3.10-alpine | `dkimg/opencv:4.5.5-alpine` | 3.10 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.5-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | ubuntu:22.04 | `dkimg/opencv:4.5.5-ubuntu` | 3.10 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/opencv/4.5.5-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
