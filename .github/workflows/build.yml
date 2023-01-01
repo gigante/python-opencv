@@ -28,11 +28,11 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_TOKEN }}
       - name: Build
-        run: make build CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $(GITHUB_OUTPUT)
+        run: make build CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
       - name: Test
-        run: make test CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $(GITHUB_OUTPUT)
+        run: make test CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
       - name: Push
-        run: make push CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $(GITHUB_OUTPUT)
+        run: make push CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
   latest:
     needs: build
     runs-on: ubuntu-latest
@@ -53,4 +53,4 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_TOKEN }}
       - name: Latest
-        run: make latest CV=4.6.0 DIST=fedora >> $(GITHUB_OUTPUT)
+        run: make latest CV=4.6.0 DIST=fedora >> $GITHUB_OUTPUT
