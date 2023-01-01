@@ -3,12 +3,11 @@
 CV ?= 4.7.0
 DIST ?= fedora
 WORKDIR=/mnt/$$(basename $$(pwd))
-GITHUB_OUTPUT ?= $$(pwd)/output.txt
 
 run: build test login push
 
 build:
-	docker build --build-arg OPENCV_VERSION=$(CV) -t dkimg/opencv:$(CV)-$(DIST) ./$(DIST) >> $(GITHUB_OUTPUT)
+	docker build --build-arg OPENCV_VERSION=$(CV) -t dkimg/opencv:$(CV)-$(DIST) ./$(DIST)
 
 push:
 	@docker tag dkimg/opencv:$(CV)-$(DIST) ghcr.io/dkimg/opencv:$(CV)-$(DIST)
