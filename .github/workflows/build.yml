@@ -31,11 +31,23 @@ jobs:
           password: ${{ secrets.QUAY_TOKEN }}
           logout: false
       - name: Build
-        run: make build CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
+        run: |
+          - echo "### Build! :rocket:" >> $GITHUB_STEP_SUMMARY
+          - echo 'OUTPUT_BUILD<<EOF' >> $GITHUB_OUTPUT
+          - make build CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
+          - echo 'EOF' >> $GITHUB_OUTPUT
       - name: Test
-        run: make test CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
+        run: |
+          - echo "### Test! :warning:" >> $GITHUB_STEP_SUMMARY
+          - echo 'OUTPUT_TEST<<EOF' >> $GITHUB_OUTPUT
+          - make test CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
+          - echo 'EOF' >> $GITHUB_OUTPUT
       - name: Push
-        run: make push CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
+        run: |
+          - echo "### Deploy! :rocket:" >> $GITHUB_STEP_SUMMARY
+          - echo 'OUTPUT_DEPLOY<<EOF' >> $GITHUB_OUTPUT
+          - make push CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
+          - echo 'EOF' >> $GITHUB_OUTPUT
   latest:
     needs: build
     runs-on: ubuntu-latest
@@ -56,4 +68,8 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_TOKEN }}
       - name: Latest
-        run: make latest CV=4.6.0 DIST=fedora >> $GITHUB_OUTPUT
+        run: |
+          - echo "### Build! :rocket:" >> $GITHUB_STEP_SUMMARY
+          - echo 'OUTPUT_LATEST<<EOF' >> $GITHUB_OUTPUT
+          - make latest CV=4.7.0 DIST=fedora >> $GITHUB_OUTPUT
+          - echo 'EOF' >> $GITHUB_OUTPUT
