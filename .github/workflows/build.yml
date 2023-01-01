@@ -38,7 +38,7 @@ jobs:
         #  - echo 'EOF' >> $GITHUB_OUTPUT
       - name: Test
         run: |
-          - echo "### Test! :warning:" >> $GITHUB_STEP_SUMMARY
+          - echo "### Test! :rocket:" >> $GITHUB_STEP_SUMMARY
           - echo 'OUTPUT_TEST<<EOF' >> $GITHUB_OUTPUT
           - make test CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
           - echo 'EOF' >> $GITHUB_OUTPUT
