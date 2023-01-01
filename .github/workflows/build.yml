@@ -38,16 +38,16 @@ jobs:
         #  - echo 'EOF' >> $GITHUB_OUTPUT
       - name: Test
         run: |
-          echo '### Test! :rocket:' >> $GITHUB_STEP_SUMMARY
-          echo 'OUTPUT_TEST<<EOF' >> $GITHUB_OUTPUT
+          echo "### Test! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "OUTPUT_TEST<<EOF" >> $GITHUB_OUTPUT
           make test CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
-          echo 'EOF' >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
       - name: Push
         run: |
-          echo '### Deploy! :rocket:' >> $GITHUB_STEP_SUMMARY
-          echo 'OUTPUT_DEPLOY<<EOF' >> $GITHUB_OUTPUT
+          echo "### Deploy! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "OUTPUT_DEPLOY<<EOF" >> $GITHUB_OUTPUT
           make push CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
-          echo 'EOF' >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
   latest:
     needs: build
     runs-on: ubuntu-latest
@@ -69,7 +69,7 @@ jobs:
           password: ${{ secrets.QUAY_TOKEN }}
       - name: Latest
         run: |
-          echo '### Build! :rocket:' >> $GITHUB_STEP_SUMMARY
-          echo 'OUTPUT_LATEST<<EOF' >> $GITHUB_OUTPUT
+          echo "### Build! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "OUTPUT_LATEST<<EOF" >> $GITHUB_OUTPUT
           make latest CV=4.7.0 DIST=fedora >> $GITHUB_OUTPUT
-          echo 'EOF' >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
