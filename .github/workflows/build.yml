@@ -30,12 +30,12 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_TOKEN }}
           logout: false
-      - name: Build
-        run: |
-          - echo "### Build! :rocket:" >> $GITHUB_STEP_SUMMARY
-          - echo 'OUTPUT_BUILD<<EOF' >> $GITHUB_OUTPUT
-          - make build CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
-          - echo 'EOF' >> $GITHUB_OUTPUT
+      # - name: Build
+        #run: |
+        #  - echo "### Build! :rocket:" >> $GITHUB_STEP_SUMMARY
+        #  - echo 'OUTPUT_BUILD<<EOF' >> $GITHUB_OUTPUT
+        #  - make build CV=${{ matrix.version }} DIST=${{ matrix.dist }} >> $GITHUB_OUTPUT
+        #  - echo 'EOF' >> $GITHUB_OUTPUT
       - name: Test
         run: |
           - echo "### Test! :warning:" >> $GITHUB_STEP_SUMMARY
