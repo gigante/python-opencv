@@ -33,4 +33,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Latest
-        run: make latest CV=4.7.0 DIST=fedora >> $GITHUB_OUTPUT
+        run: make latest CV=4.7.0 DIST=fedora
