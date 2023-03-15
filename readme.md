@@ -18,7 +18,7 @@ Available on [DockerHub](https://hub.docker.com/r/hdgigante/pyopencv)
 ## Usage:
 
 ```
-$ docker run -it dkimg/opencv python3
+$ docker run -it hdgigante/python-opencv python3
 >>> import cv2
 ```
 
