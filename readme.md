@@ -13,7 +13,7 @@ Docker images with OpenCV and Python bindings
 - Intel TBB
 - libjpeg, libpng, libtiff, libwebp and openjpeg
 
-Available on [DockerHub](https://hub.docker.com/r/hdgigante/pyopencv)
+Available on [DockerHub](https://hub.docker.com/r/hdgigante/python-opencv)
 
 ## Usage:
 
