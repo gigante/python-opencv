@@ -1,4 +1,4 @@
-FROM debian:11-slim
+FROM debian:12.1-slim
 
 ARG OPENCV_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
@@ -12,13 +12,13 @@ RUN set -ex \
         wget unzip \
         libhdf5-103-1 libhdf5-dev \
         libopenblas0 libopenblas-dev \
-        libprotobuf23 libprotobuf-dev \
+        libprotobuf32 libprotobuf-dev \
         libjpeg62-turbo libjpeg62-turbo-dev \
         libpng16-16 libpng-dev \
-        libtiff5 libtiff-dev \
-        libwebp6 libwebp-dev \
+        libtiff6 libtiff-dev \
+        libwebp7 libwebp-dev \
         libopenjp2-7 libopenjp2-7-dev \
-        libtbb2 libtbb-dev \
+        libtbb12 libtbb-dev \
         libeigen3-dev \
         tesseract-ocr tesseract-ocr-por libtesseract-dev \
         python3 python3-pip python3-numpy python3-dev \
@@ -69,7 +69,6 @@ RUN set -ex \
         -D INSTALL_TESTS=OFF \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
-    && ln -s /usr/local/lib/python3.9/site-packages/cv2 /usr/local/lib/python3.9/dist-packages/cv2 \
     && make install \
     && rm -rf /opt/build/* \
     && rm -rf /opt/opencv-${OPENCV_VERSION} \

@@ -1,24 +1,24 @@
-FROM ubuntu:22.10
+FROM ubuntu:23.04
 
-ARG OPENCV_VERSION
+ARG OPENCV_VERSION=4.8.1
 ARG DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /opt/build
 
 RUN set -ex \
     && apt-get -qq update \
-    && apt-get -qq install -y --no-install-recommends \
+    && apt-get install -y --no-install-recommends \
         build-essential cmake \
         wget unzip \
         libhdf5-103-1 libhdf5-dev \
         libopenblas0 libopenblas-dev \
-        libprotobuf23 libprotobuf-dev \
+        libprotobuf32 libprotobuf-dev \
         libjpeg8 libjpeg8-dev \
         libpng16-16 libpng-dev \
-        libtiff5 libtiff-dev \
+        libtiff6 libtiff-dev \
         libwebp7 libwebp-dev \
         libopenjp2-7 libopenjp2-7-dev \
-        libtbb2 libtbb2-dev \
+        libtbb12 libtbb-dev \
         libeigen3-dev \
         tesseract-ocr tesseract-ocr-por libtesseract-dev \
         python3 python3-pip python3-numpy python3-dev \
@@ -70,7 +70,6 @@ RUN set -ex \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
     && make install \
-    && ln -s /usr/local/lib/python3.10/dist-packages/cv2/python-3.10/cv2.cpython-310-x86_64-linux-gnu.so /usr/local/lib/python3.10/dist-packages/cv2/python-3.10/cv2.so \
     && rm -rf /opt/build/* \
     && rm -rf /opt/opencv-${OPENCV_VERSION} \
     && rm -rf /opt/opencv_contrib-${OPENCV_VERSION} \
@@ -79,7 +78,7 @@ RUN set -ex \
         build-essential cmake \
         libhdf5-dev \
         libprotobuf-dev \
-        libjpeg8-dev \
+        libjpeg9-dev \
         libpng-dev \
         libtiff-dev \
         libwebp-dev \

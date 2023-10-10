@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [4.7.0, 4.6.0, 4.5.5]
+        version: [4.8.1, 4.7.0, 4.6.0]
         dist: ["alpine", "debian", "fedora", "ubuntu"]
     steps:
       - uses: actions/checkout@v2
@@ -33,4 +33,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Latest
-        run: make latest CV=4.7.0 DIST=fedora
+        run: make latest CV=4.8.1 DIST=fedora
