@@ -1,6 +1,6 @@
-FROM ubuntu:23.04
+FROM ubuntu:23.10
 
-ARG OPENCV_VERSION=4.8.1
+ARG OPENCV_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /opt/build
