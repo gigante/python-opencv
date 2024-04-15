@@ -22,7 +22,7 @@ RUN set -ex \
         libtbb@testing libtbb-dev@testing \
         eigen eigen-dev \
         tesseract-ocr tesseract-ocr-data-por tesseract-ocr-dev \
-        python3-dev \
+        py3-pip python3-dev \
         linux-headers \
     && pip install -q numpy \
     && wget -q https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \

@@ -20,7 +20,7 @@ RUN set -ex \
         openblas openblas-devel \
         protobuf protobuf-devel \
         tesseract tesseract-langpack-por tesseract-devel \
-        python3-numpy python3-devel \
+        python3-pip python3-numpy python3-devel \
         kernel-headers \
     && wget -q https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
     && wget -q https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \

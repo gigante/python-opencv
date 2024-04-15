@@ -6,6 +6,7 @@
 Docker images with OpenCV and Python bindings
 
 - [OpenCV](https://github.com/opencv/opencv) + [contrib](https://github.com/opencv/opencv_contrib)
+- pip
 - Numpy
 - Tesseract
 - Eigen
