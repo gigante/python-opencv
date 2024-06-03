@@ -1,6 +1,6 @@
 .PHONY: run build login push latest test save
 
-CV ?= 4.9.0
+CV ?= 4.10.0
 DIST ?= fedora
 WORKDIR=/mnt/$$(basename $$(pwd))
 ORG=hdgigante
