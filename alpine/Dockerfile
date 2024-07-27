@@ -75,7 +75,6 @@ RUN set -ex \
         -D PYTHON3_LIBRARY=/usr/local/lib/libpython3.so \
         -D PYTHON_LIBRARY=/usr/local/lib/libpython3.so \
         -D PYTHON3_PACKAGES_PATH=/usr/local/lib/python3.12/site-packages/ \
-        -D PYTHON3_NUMPY_INCLUDE_DIRS=/usr/local/lib/python3.12/site-packages/numpy/core/include/ \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
     && make install \
