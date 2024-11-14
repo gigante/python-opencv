@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:24.10
 
 ARG OPENCV_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
