@@ -89,7 +89,6 @@ RUN set -ex \
         libjpeg-turbo-dev \
         libpng-dev \
         tiff-dev \
-        libwebp-dev \
         openjpeg-dev \
         libtbb-dev \
         eigen-dev \

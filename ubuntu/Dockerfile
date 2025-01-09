@@ -81,7 +81,6 @@ RUN set -ex \
         libjpeg9-dev \
         libpng-dev \
         libtiff-dev \
-        libwebp-dev \
         libopenjp2-7-dev \
         libtbb-dev \
         libtesseract-dev \
