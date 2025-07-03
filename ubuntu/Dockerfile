@@ -10,7 +10,7 @@ RUN set -ex \
     && apt-get install -y --no-install-recommends \
         build-essential cmake \
         wget unzip \
-        libhdf5-103-1 libhdf5-dev \
+        libhdf5-310 libhdf5-dev \
         libopenblas0 libopenblas-dev \
         libprotobuf32 libprotobuf-dev \
         libjpeg8 libjpeg8-dev \
