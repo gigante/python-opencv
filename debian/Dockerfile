@@ -1,4 +1,4 @@
-FROM debian:12.11-slim
+FROM debian:12.12-slim
 
 ARG OPENCV_VERSION
 ARG DEBIAN_FRONTEND=noninteractive

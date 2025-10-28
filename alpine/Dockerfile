@@ -1,4 +1,4 @@
-FROM python:3.13-alpine
+FROM python:3.14-alpine
 
 ARG OPENCV_VERSION
 
@@ -71,10 +71,10 @@ RUN set -ex \
         -D INSTALL_C_EXAMPLES=OFF \
         -D INSTALL_TESTS=OFF \
         -D PYTHON3_EXECUTABLE=/usr/local/bin/python \
-        -D PYTHON3_INCLUDE_DIR=/usr/local/include/python3.13/ \
+        -D PYTHON3_INCLUDE_DIR=/usr/local/include/python3.14/ \
         -D PYTHON3_LIBRARY=/usr/local/lib/libpython3.so \
         -D PYTHON_LIBRARY=/usr/local/lib/libpython3.so \
-        -D PYTHON3_PACKAGES_PATH=/usr/local/lib/python3.13/site-packages/ \
+        -D PYTHON3_PACKAGES_PATH=/usr/local/lib/python3.14/site-packages/ \
         /opt/opencv-${OPENCV_VERSION} \
     && make -j$(nproc) \
     && make install \

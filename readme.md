@@ -25,18 +25,18 @@ $ docker run -it hdgigante/python-opencv python3
 
 | opencv | base image | tag | python | size |
 |:---------:|:------:|:-----:|:-----:|:-----:|
-| **5.0.0-alpha** | [fedora:42](https://hub.docker.com/_/fedora) | `hdgigante/python-opencv` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/5.0.0-alpha-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [python:3.13-alpine](https://hub.docker.com/_/python) | `hdgigante/python-opencv:5.0.0-alpha-alpine` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/5.0.0-alpha-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [ubuntu:25.04](https://hub.docker.com/_/ubuntu) | `hdgigante/python-opencv:5.0.0-alpha-ubuntu` | 3.12 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/5.0.0-alpha-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [debian:12.11-slim](https://hub.docker.com/_/debian) | `hdgigante/python-opencv:5.0.0-alpha-debian` | 3.11 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/5.0.0-alpha-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| **4.12.0** | [fedora:42](https://hub.docker.com/_/fedora) | `hdgigante/python-opencv:4.12.0-fedora` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [python:3.13-alpine](https://hub.docker.com/_/python) | `hdgigante/python-opencv:4.12.0-alpine` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [ubuntu:25.04](https://hub.docker.com/_/ubuntu) | `hdgigante/python-opencv:4.12.0-ubuntu` | 3.12 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [debian:12.11-slim](https://hub.docker.com/_/debian) | `hdgigante/python-opencv:4.12.0-debian` | 3.11 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| **4.11.0** | [fedora:42](https://hub.docker.com/_/fedora) | `hdgigante/python-opencv:4.11.0-fedora` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.11.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [python:3.13-alpine](https://hub.docker.com/_/python) | `hdgigante/python-opencv:4.11.0-alpine` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.11.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [ubuntu:25.04](https://hub.docker.com/_/ubuntu) | `hdgigante/python-opencv:4.11.0-ubuntu` | 3.12 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.11.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [debian:12.11-slim](https://hub.docker.com/_/debian) | `hdgigante/python-opencv:4.11.0-debian` | 3.11 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.11.0-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| **5.0.0-alpha** | [fedora:43](https://hub.docker.com/_/fedora) | `hdgigante/python-opencv` | 3.14 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/5.0.0-alpha-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | [python:3.14-alpine](https://hub.docker.com/_/python) | `hdgigante/python-opencv:5.0.0-alpha-alpine` | 3.14 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/5.0.0-alpha-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | [ubuntu:25.10](https://hub.docker.com/_/ubuntu) | `hdgigante/python-opencv:5.0.0-alpha-ubuntu` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/5.0.0-alpha-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | [debian:12.12-slim](https://hub.docker.com/_/debian) | `hdgigante/python-opencv:5.0.0-alpha-debian` | 3.11 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/5.0.0-alpha-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| **4.12.0** | [fedora:43](https://hub.docker.com/_/fedora) | `hdgigante/python-opencv:4.12.0-fedora` | 3.14 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | [python:3.14-alpine](https://hub.docker.com/_/python) | `hdgigante/python-opencv:4.12.0-alpine` | 3.14 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | [ubuntu:25.10](https://hub.docker.com/_/ubuntu) | `hdgigante/python-opencv:4.12.0-ubuntu` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | [debian:12.12-slim](https://hub.docker.com/_/debian) | `hdgigante/python-opencv:4.12.0-debian` | 3.11 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| **4.11.0** | [fedora:43](https://hub.docker.com/_/fedora) | `hdgigante/python-opencv:4.11.0-fedora` | 3.14 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.11.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | [python:3.14-alpine](https://hub.docker.com/_/python) | `hdgigante/python-opencv:4.11.0-alpine` | 3.14 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.11.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | [ubuntu:25.10](https://hub.docker.com/_/ubuntu) | `hdgigante/python-opencv:4.11.0-ubuntu` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.11.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
+| | [debian:12.12-slim](https://hub.docker.com/_/debian) | `hdgigante/python-opencv:4.11.0-debian` | 3.11 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.11.0-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
 
 ## Build
 
@@ -89,4 +89,4 @@ $ make build CV=5.0.0-alpha DIST=fedora
 
 ## Based on...
 
-- [Install OpenCV-Python in Fedora](https://docs.opencv.org/4.11.0/dd/dd5/tutorial_py_setup_in_fedora.html)
+- [Install OpenCV-Python in Fedora](https://docs.opencv.org/4.12.0/dd/dd5/tutorial_py_setup_in_fedora.html)
