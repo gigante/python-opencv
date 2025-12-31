@@ -1,4 +1,4 @@
-FROM debian:12.12-slim
+FROM debian:13.2-slim
 
 ARG OPENCV_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
@@ -10,7 +10,7 @@ RUN set -ex \
     && apt-get -qq install -y --no-install-recommends \
         build-essential cmake \
         wget unzip \
-        libhdf5-103-1 libhdf5-dev \
+        libhdf5-310 libhdf5-dev \
         libopenblas0 libopenblas-dev \
         libprotobuf32 libprotobuf-dev \
         libjpeg62-turbo libjpeg62-turbo-dev \
