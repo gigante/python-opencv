@@ -74,7 +74,6 @@ RUN set -ex \
     && rm -rf /opt/opencv-${OPENCV_VERSION} \
     && rm -rf /opt/opencv_contrib-${OPENCV_VERSION} \
     && apt-get -qq remove -y \
-        software-properties-common \
         build-essential cmake \
         libhdf5-dev \
         libprotobuf-dev \
