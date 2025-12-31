@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [5.0.0-alpha, 4.12.0, 4.11.0]
+        version: [5.0.0-alpha, 4.13.0, 4.12.0]
         dist: ["alpine", "debian", "fedora", "ubuntu"]
     steps:
       - uses: actions/checkout@v2
