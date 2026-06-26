@@ -33,10 +33,6 @@ $ docker run -it hdgigante/python-opencv python3
 | | [python:3.14-alpine](https://hub.docker.com/_/python) | `hdgigante/python-opencv:4.13.0-alpine` | 3.14 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.13.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | [ubuntu:25.10](https://hub.docker.com/_/ubuntu) | `hdgigante/python-opencv:4.13.0-ubuntu` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.13.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
 | | [debian:13.2-slim](https://hub.docker.com/_/debian) | `hdgigante/python-opencv:4.13.0-debian` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.13.0-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| **4.12.0** | [fedora:43](https://hub.docker.com/_/fedora) | `hdgigante/python-opencv:4.12.0-fedora` | 3.14 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-fedora?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [python:3.14-alpine](https://hub.docker.com/_/python) | `hdgigante/python-opencv:4.12.0-alpine` | 3.14 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-alpine?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [ubuntu:25.10](https://hub.docker.com/_/ubuntu) | `hdgigante/python-opencv:4.12.0-ubuntu` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-ubuntu?label=%20&logo=docker&logoColor=white&style=flat-square) |
-| | [debian:13.2-slim](https://hub.docker.com/_/debian) | `hdgigante/python-opencv:4.12.0-debian` | 3.13 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/hdgigante/python-opencv/4.12.0-debian?label=%20&logo=docker&logoColor=white&style=flat-square) |
 
 ## Build
 
@@ -89,4 +85,4 @@ $ make build CV=5.0.0 DIST=fedora
 
 ## Based on...
 
-- [Install OpenCV-Python in Fedora](https://docs.opencv.org/4.12.0/dd/dd5/tutorial_py_setup_in_fedora.html)
+- [Install OpenCV-Python in Fedora](https://docs.opencv.org/5.0/py_tutorials/py_setup/py_setup_in_fedora/py_setup_in_fedora.html)
