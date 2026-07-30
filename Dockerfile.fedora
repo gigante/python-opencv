@@ -5,6 +5,7 @@ ARG OPENCV_VERSION
 WORKDIR /opt/build
 
 RUN set -ex \
+    && dnf -q update -y \
     && dnf -q install -y \
         gcc gcc-c++ \
         make cmake \
